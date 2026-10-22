@@ -202,3 +202,31 @@
   .staff-track .staff-card,
   .staff-carousel-assistants .staff-track .staff-card { flex-basis: 280px; width: 280px; padding: 76px 20px 22px; }
 }
+/* Use the chief librarian's portrait-and-text layout throughout the directory. */
+.staff-track .staff-card,
+.staff-carousel-assistants .staff-track .staff-card {
+  flex: 0 0 min(580px, calc(100vw - 48px));
+  width: min(580px, calc(100vw - 48px));
+  min-height: 240px;
+  padding: 37px 25px 25px 182px;
+}
+.staff-card .staff-name { font-size: 20px; }
+.staff-card .staff-position { color: #123A6D; font-size: 12px; font-weight: 800; }
+.staff-card > .staff-avatar { top: -29px; left: 23px; width: 135px; height: 135px; }
+/* Only the dialog body scrolls; the title and close control remain fixed. */
+.dialog-content {
+  padding-top: 24px;
+  scrollbar-width: none;
+}
+.dialog-content::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.dialog-content:focus-visible { outline: 2px solid #123A6D; outline-offset: -3px; }
+@media (max-width: 767px) {
+  .staff-track .staff-card,
+  .staff-carousel-assistants .staff-track .staff-card { padding: 33px 20px 23px 149px; }
+  .staff-card > .staff-avatar { width: 111px; height: 111px; }
+}
+@media (max-width: 430px) {
+  .staff-track .staff-card,
+  .staff-carousel-assistants .staff-track .staff-card { min-height: 320px; padding-left: 132px; }
+  .staff-card > .staff-avatar { left: 13px; width: 103px; height: 103px; }
+}

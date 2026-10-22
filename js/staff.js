@@ -22,8 +22,8 @@ function staffAvatar(member) {
   }
   return avatar;
 }
-function createStaffCard(member, featured = false) {
-  const card = staffElement('article', `staff-card${featured ? ' staff-card-featured' : ''}`);
+function createStaffCard(member) {
+  const card = staffElement('article', 'staff-card staff-card-featured');
   card.append(staffAvatar(member), staffElement('h4', 'staff-name', displayName(member)), staffElement('p', 'staff-position', member.position));
   if (member.department) card.append(staffElement('p', 'staff-department', member.department));
   if (member.description) card.append(staffElement('p', 'staff-description', member.description));
@@ -32,7 +32,7 @@ function createStaffCard(member, featured = false) {
 }
 const orderedStaff = groupedStaff(staffMembers).flatMap(group => group.people);
 const chief = orderedStaff.find(member => member.position === 'Chief Librarian');
-if (chief) document.querySelector('#staff-featured').append(createStaffCard(chief, true));
+if (chief) document.querySelector('#staff-featured').append(createStaffCard(chief));
 const staffCarousels = [];
 for (const [selector, people] of [
   ['#library-team-track', orderedStaff.filter(member => member !== chief && member.position !== 'Student Assistant')],

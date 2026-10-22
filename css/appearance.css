@@ -14,21 +14,21 @@ html { scroll-padding-top: 83px; }
   position: sticky;
   top: 0;
   z-index: 90;
-  background: #0D2C53;
-  border-color: #355171;
-  color: #F3F6FA;
+  background: #FFFFFF;
+  border-color: #D9E1EA;
+  color: #123A6D;
 }
 .skip-link { z-index: 100; }
-.brand-copy strong { color: #F3F6FA; }
-.brand-copy small { color: var(--gold); }
-.nav-link { color: #DCE7F4; }
-.nav-link:hover, .nav-link.is-active { color: #FFFFFF; }
+.brand-copy strong { color: #123A6D; }
+.brand-copy small { color: #123A6D; }
+.nav-link { color: #344A67; }
+.nav-link:hover, .nav-link.is-active { color: #123A6D; }
 .nav-link.is-active { box-shadow: inset 0 -2px 0 var(--gold); }
 .nav-library { border-color: #7891B0; color: #F3F6FA; background: rgba(255,255,255,.07); }
 .nav-library:hover { background: #1B4F8F; }
 .menu-toggle { border-color: #7891B0; background: transparent; }
-.menu-toggle span { background: #F3F6FA; }
-.primary-nav.is-open { background: #0D2C53; border-color: #355171; }
+.menu-toggle span { background: #123A6D; }
+.primary-nav.is-open { background: #FFFFFF; border-color: #D9E1EA; }
 
 .hero h1, .section-head h2, .access-section h2, .about-section h2,
 .staff-intro h2, .staff-carousel-heading h3, .tour-copy h2,

@@ -210,7 +210,6 @@ function renderCards() {
       makeLogo(resource),
       element("h3", "resource-name", resource.name),
       element("p", "resource-type", resource.type),
-      element("p", "resource-description", resource.description),
       websiteInfo,
     );
     const cta = element("span", "card-cta");
@@ -298,7 +297,6 @@ function openResource(resource, trigger) {
   titleGroup.append(title);
   heading.append(titleGroup);
   dialogHeading.append(heading);
-  dialogContent.append(element("p", "dialog-description", resource.description));
 
   const guide = element("div", "dialog-resource-guide");
   [

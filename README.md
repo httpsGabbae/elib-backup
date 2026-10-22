@@ -14,7 +14,7 @@ The header uses `logos/lcc_logo.png`. LIBROS uses the same LCC emblem; Gale, IG 
 
 ## Virtual tour
 
-The Learning Resource Center virtual tour appears between About the Portal and the Gallery. It uses a Google Drive preview embed, with a direct Drive link as a fallback. The Drive file must be shared with **Anyone with the link** for visitors to watch it. The original local MP4 is excluded by `.gitignore` so it does not block a GitHub push.
+The Learning Resource Center virtual tour appears above the Gallery. It uses a Google Drive preview embed, with a direct Drive link as a fallback. The Drive file must be shared with **Anyone with the link** for visitors to watch it. The original local MP4 is excluded by `.gitignore` so it does not block a GitHub push.
 
 ## Staff directory
 
@@ -46,7 +46,7 @@ Titles and credentials appear with the staff member's name and in the profile de
 
 The hero slideshow fills the front page hero section behind the heading. It uses `images/hero-1.png`, `images/hero-2.png`, and `images/hero-3.png`. Replace those placeholder files with your own library photos while keeping the same filenames; the page will pick them up automatically. Wide landscape photos work best. The slideshow advances automatically without visible controls and stops when the visitor prefers reduced motion.
 
-The site uses a single light color scheme. The sticky header uses the same navy as the footer.
+The site uses a single light color scheme. The sticky header uses a white background with navy navigation text.
 
 ## Gallery page
 
