@@ -24,7 +24,6 @@ const resources = [
       "LIBROS-OPAC is the online public access catalog of the Lipa City Colleges library collection. It helps students, faculty, and staff discover materials available through the Learning Resource Center.",
     whatYouCanFind:
       "Search books and references by title, author, subject, or keyword, and check the collection before visiting the library.",
-    accessType: "Student / Employee Login",
     accessInfo:
       "Use your own Student Number or Employee Number as the School ID. The example below shows the expected format; enter your actual number on the LIBROS website.",
     url: "https://lcc-silvercrest.com/libcoll/",
@@ -32,8 +31,6 @@ const resources = [
     logoAlt: "Lipa City Colleges emblem",
     mark: "L",
     markClass: "",
-    accent: "#2d6a9e",
-    tint: "#e4eff7",
   },
   {
     id: "gale",
@@ -48,7 +45,6 @@ const resources = [
       "GALE is an academic research platform for finding reliable information across many subjects. Available content depends on LCC's subscription.",
     whatYouCanFind:
       "Explore journal articles, magazines, newspapers, reference works, and other sources for essays, presentations, and research.",
-    accessType: "Institutional Access",
     accessInfo:
       "Use the LCC account details below if the Gale website asks you to sign in.",
     url: "https://link.gale.com/apps/menu?u=phlipacc",
@@ -57,8 +53,6 @@ const resources = [
     logoWide: true,
     mark: "g",
     markClass: "logo-gale",
-    accent: "#9d4c58",
-    tint: "#f8e9ec",
   },
   {
     id: "ig",
@@ -73,7 +67,6 @@ const resources = [
       "IG Publishing provides digital academic books, publications, and electronic reference materials available through the library.",
     whatYouCanFind:
       "Browse eBooks and subject references for course reading, topic review, and additional study beyond the print collection.",
-    accessType: "Shared Access",
     accessInfo:
       "Sign in to the iG Library portal using the shared account details below.",
     url: "https://portal.igpublish.com/",
@@ -82,8 +75,6 @@ const resources = [
     logoWide: true,
     mark: "iG",
     markClass: "logo-ig",
-    accent: "#287e70",
-    tint: "#e3f3ed",
   },
   {
     id: "tritech",
@@ -97,7 +88,6 @@ const resources = [
       "TRITECH provides electronic books and digital learning resources made available through the library.",
     whatYouCanFind:
       "Explore additional digital reading for assignments, coursework, research, and independent study.",
-    accessType: "Shared Access",
     accessInfo:
       "Sign in to Tritech using the shared account details below.",
     url: "https://tdmebooks.com/",
@@ -105,13 +95,12 @@ const resources = [
     logoAlt: "Tritech Digital Media logo",
     mark: "T",
     markClass: "logo-tritech",
-    accent: "#ac773a",
-    tint: "#f7edda",
   },
 ];
 
 const grid = document.querySelector("#resource-grid");
 const dialog = document.querySelector("#resource-dialog");
+const dialogHeading = document.querySelector("#dialog-heading-slot");
 const dialogContent = document.querySelector("#dialog-content");
 const toast = document.querySelector("#toast");
 let lastTrigger = null;
@@ -186,10 +175,10 @@ function showResourcePreview(resource, trigger) {
     details.append(element("dt", "", "Username"), element("dd", "", credentials.username));
   }
   if (credentials?.password) {
-    details.append(element("dt", "", "Password"), element("dd", "", credentials.password));
+    details.append(element("dt", "", "Password"), element("dd", "", "••••••••"));
   }
   if (details.childElementCount) resourcePreview.append(details);
-  resourcePreview.append(element("p", "resource-preview-hint", "Click for copy buttons and the provider link."));
+  resourcePreview.append(element("p", "resource-preview-hint", "Click to reveal access details and open the provider."));
   resourcePreview.hidden = false;
   resourcePreviewTrigger = trigger;
   trigger.setAttribute("aria-describedby", resourcePreview.id);
@@ -206,8 +195,6 @@ function renderCards() {
   const fragment = document.createDocumentFragment();
   resources.forEach((resource) => {
     const card = element("article", "resource-card");
-    card.style.setProperty("--accent", resource.accent);
-    card.style.setProperty("--tint", resource.tint);
     const button = element("button", "card-button");
     button.type = "button";
     button.setAttribute("aria-label", `View ${resource.name} access details`);
@@ -225,7 +212,6 @@ function renderCards() {
       element("p", "resource-type", resource.type),
       element("p", "resource-description", resource.description),
       websiteInfo,
-      element("span", "access-badge", resource.accessType),
     );
     const cta = element("span", "card-cta");
     cta.append(
@@ -274,13 +260,13 @@ function addCredentialRow(parent, label, value, isPassword) {
   const shown = element(
     "span",
     "credential-value",
-    value,
+    isPassword ? "••••••••" : value,
   );
   row.append(shown);
   if (isPassword) {
-    const reveal = element("button", "mini-button", "Hide");
+    const reveal = element("button", "mini-button", "Show");
     reveal.type = "button";
-    reveal.setAttribute("aria-label", "Hide password");
+    reveal.setAttribute("aria-label", "Show password");
     reveal.addEventListener("click", () => {
       const visible = reveal.textContent === "Show";
       shown.textContent = visible ? value : "••••••••";
@@ -302,19 +288,17 @@ function addCredentialRow(parent, label, value, isPassword) {
 
 function openResource(resource, trigger) {
   lastTrigger = trigger || document.activeElement;
+  dialogHeading.replaceChildren();
   dialogContent.replaceChildren();
-  dialog.style.setProperty("--accent", resource.accent);
   const heading = element("div", "dialog-heading");
   const titleGroup = element("div");
   titleGroup.append(element("div", "dialog-eyebrow", resource.type));
   const title = element("h2", "", resource.name);
   title.id = "dialog-title";
   titleGroup.append(title);
-  heading.append(makeLogo(resource), titleGroup);
-  dialogContent.append(
-    heading,
-    element("p", "dialog-description", resource.description),
-  );
+  heading.append(titleGroup);
+  dialogHeading.append(heading);
+  dialogContent.append(element("p", "dialog-description", resource.description));
 
   const guide = element("div", "dialog-resource-guide");
   [
@@ -362,16 +346,14 @@ function openResource(resource, trigger) {
     dialogContent.append(
       element("p", "dialog-unavailable", resource.destinationNote),
     );
-  const visit = element("a", "button button-primary dialog-visit");
+  const visit = element("a", "dialog-visit");
   visit.href = resource.url;
   visit.target = "_blank";
   visit.rel = "noopener noreferrer";
-  visit.append(
-    element("span", "", `Visit ${resource.name}`),
-    element("span", "", "↗"),
-  );
+  visit.textContent = `Visit ${resource.name} website`;
   dialogContent.append(visit);
   dialog.showModal();
+  dialogContent.scrollTop = 0;
   document.body.style.overflow = "hidden";
 }
 

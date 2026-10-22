@@ -3,35 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#F7F9FC" />
+    <meta name="theme-color" content="#0D2C53" />
     <meta
       name="description"
       content="Explore library catalogs, research databases, digital publications, and e-books through the Lipa City Colleges eLibrary portal."
     />
     <title>LCC Library Gateway</title>
     <link rel="icon" type="image/png" href="logos/lcc_logo.png" />
-    <script>
-      try {
-        document.documentElement.dataset.theme =
-          localStorage.getItem("lcc-theme") ||
-          (matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light");
-      } catch {
-        document.documentElement.dataset.theme = "light";
-      }
-    </script>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hero.css" />
     <link rel="stylesheet" href="css/tour.css" />
     <link rel="stylesheet" href="css/gallery.css" />
     <link rel="stylesheet" href="css/staff.css?v=6" />
-    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/appearance.css" />
     <link rel="stylesheet" href="css/guidance.css" />
+    <link rel="stylesheet" href="css/revision.css" />
     <script src="js/app.js" defer></script>
     <script src="js/staff-data.js" defer></script>
     <script src="js/staff.js?v=6" defer></script>
-    <script src="js/theme.js" defer></script>
-    <script src="js/faq.js" defer></script>
+    <script src="js/hero.js" defer></script>
     <script src="js/nav.js" defer></script>
   </head>
   <body>
@@ -73,100 +63,38 @@
           <a href="#home" class="nav-link is-active">Home</a>
           <a href="#resources" class="nav-link">Resources</a>
           <a href="#about" class="nav-link">About</a>
-          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
           <a href="#staff" class="nav-link">Staff</a>
-          <a
-            href="https://sites.google.com/view/lcc-library/home"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="nav-library"
-            >LCC Library <span aria-hidden="true">↗</span></a
-          >
-        </nav>
-        <button
-          class="theme-toggle"
-          id="theme-toggle"
-          type="button"
-          aria-label="Switch to dark mode"
-          title="Switch theme"
-        >
-          <span class="theme-icon" aria-hidden="true">☾</span>
-        </button>
-      </div>
-    </header>
-
+        </nav></div></header>
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <div class="eyebrow">
-              <span class="eyebrow-line"></span> MADE FOR YOUR NEXT BIG IDEA
-            </div>
-            <h1 id="hero-title">
-              Your next great idea<br /><em>starts here.</em>
-            </h1>
-            <p>
-              Working on an assignment or exploring a new topic? Find books,
-              trusted research sources, and digital collections in one place.
-            </p>
-            <a class="button button-primary" href="#resources"
-              >Explore resources <span aria-hidden="true">↗</span></a
-            >
+        <div class="hero-slider" aria-label="LCC library photo slideshow">
+          <div class="hero-slider-track">
+            <div class="hero-slide"><img src="images/hero-1.png" alt="LCC library highlight 1" fetchpriority="high" /></div>
+            <div class="hero-slide"><img src="images/hero-2.png" alt="LCC library highlight 2" /></div>
+            <div class="hero-slide"><img src="images/hero-3.png" alt="LCC library highlight 3" /></div>
+            <div class="hero-slide" aria-hidden="true"><img src="images/hero-1.png" alt="" /></div>
           </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="art-orbit orbit-one"></div>
-            <div class="art-orbit orbit-two"></div>
-            <div class="art-book book-back"></div>
-            <div class="art-book book-mid"></div>
-            <div class="art-book book-front">
-              <span class="book-rule"></span
-              ><span class="book-title">LCC<br />LEARNING<br />COMMONS</span
-              ><span class="book-bottom">eLIBRARY PORTAL</span>
-            </div>
-            <div class="art-spark spark-one">✦</div>
-            <div class="art-spark spark-two">✦</div>
-            <div class="art-caption">
-              <span class="caption-dot"></span> A WORLD OF RESOURCES<br /><strong
-                >AT YOUR FINGERTIPS</strong
-              >
-            </div>
-          </div>
+          <span class="hero-slider-label">LCC LEARNING RESOURCE CENTER</span>
         </div>
+        <div class="container hero-inner"><div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> MADE FOR YOUR NEXT BIG IDEA</div>
+          <h1 id="hero-title">Your next great idea<br /><em>starts here.</em></h1>
+          <p>Working on an assignment or exploring a new topic? Find books, trusted research sources, and digital collections in one place.</p>
+          <a class="button button-primary" href="#resources">Explore resources <span aria-hidden="true">↗</span></a>
+        </div></div>
       </section>
-
-      <section
-        class="resources-section"
-        id="resources"
-        aria-labelledby="resources-title"
-      >
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker">CURATED FOR YOUR JOURNEY</div>
-              <h2 id="resources-title">
-                Explore library resources<span class="period">.</span>
-              </h2>
-              <p>
-                Choose a platform to access the digital resources available to
-                LCC students and employees.
-              </p>
-            </div>
-            <div class="resource-count" aria-label="Four available platforms">
-              <span>04</span><small>PLATFORMS</small>
-            </div>
-          </div>
-          <div class="resource-grid" id="resource-grid"></div>
-          <p class="resource-note">
-            <span aria-hidden="true">ⓘ</span> Select a platform to review its
-            sign-in details before visiting.
-          </p>
-          <div class="resource-help">
-            <section class="resource-chooser" aria-labelledby="resource-chooser-title">
-              <div class="section-kicker">RESOURCE GUIDE</div>
-              <h3 id="resource-chooser-title">Not sure where to start?</h3>
-              <ul>
-                <li><a href="#resources" data-resource-link="libros"><span class="resource-need">Looking for a book in the LCC library?</span><span class="resource-use">LIBROS-OPAC <span aria-hidden="true">↗</span></span></a></li>
-                <li><a href="#resources" data-resource-link="gale"><span class="resource-need">Need journal articles or academic sources?</span><span class="resource-use">GALE <span aria-hidden="true">↗</span></span></a></li>
+      <section class="resources-section" id="resources" aria-labelledby="resources-title"><div class="container">
+        <div class="section-head"><div><div class="section-kicker">CURATED FOR YOUR JOURNEY</div>
+          <h2 id="resources-title">Explore library resources<span class="period">.</span></h2>
+          <p>Choose a platform to access the digital resources available to LCC students and employees.</p>
+        </div></div>
+        <div class="resource-grid" id="resource-grid"></div>
+        <p class="resource-note"><span aria-hidden="true">ⓘ</span> Select a platform to review its sign-in details before visiting.</p>
+        <div class="resource-help"><section class="resource-chooser" aria-labelledby="resource-chooser-title">
+          <div class="section-kicker">RESOURCE GUIDE</div><h3 id="resource-chooser-title">Not sure where to start?</h3><ul>
+            <li><a href="#resources" data-resource-link="libros"><span class="resource-need">Looking for a book in the LCC library?</span><span class="resource-use">LIBROS-OPAC <span aria-hidden="true">↗</span></span></a></li>
+            <li><a href="#resources" data-resource-link="gale"><span class="resource-need">Need journal articles or academic sources?</span><span class="resource-use">GALE <span aria-hidden="true">↗</span></span></a></li>
                 <li><a href="#resources" data-resource-link="ig"><span class="resource-need">Looking for digital academic books?</span><span class="resource-use">IG Publishing <span aria-hidden="true">↗</span></span></a></li>
                 <li><a href="#resources" data-resource-link="tritech"><span class="resource-need">Need additional eBooks and online reading?</span><span class="resource-use">TRITECH <span aria-hidden="true">↗</span></span></a></li>
               </ul>
@@ -239,31 +167,47 @@
 
       <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
         <div class="container">
-          <div class="section-kicker">INSIDE THE LIBRARY</div>
           <div class="gallery-heading">
             <div>
+              <div class="section-kicker">INSIDE THE LIBRARY</div>
               <h2 id="gallery-title">A glimpse of the LRC<span class="period">.</span></h2>
-              <p>Explore photos of the Learning Resource Center.</p>
+              <p>Explore the collections, displays, and spaces of the LCC Learning Resource Center. Get to know the library before your next visit.</p>
             </div>
-            <a class="gallery-tour-link" href="#tour">Watch the full tour <span aria-hidden="true">↗</span></a>
+            <a class="gallery-back" href="gallery.html">Explore the gallery <span aria-hidden="true">↗</span></a>
           </div>
           <div class="gallery-grid">
-            <!-- Replace photo-1.png through photo-4.png in assets/gallery/ with your own photos. -->
+            <!-- To add a photo, replace its PNG below and edit the title, description, and alt text. -->
             <figure class="gallery-card">
-              <div class="gallery-image"><img src="assets/gallery/photo-1.png" alt="Library photo 1" loading="lazy" /></div>
-              <figcaption class="gallery-caption"><span>01</span> Library photo</figcaption>
+              <div class="gallery-image"><img src="assets/gallery/photo-1.png" alt="Shelves of books in the Filipiniana section of the LCC library" loading="lazy" width="1200" height="900" /></div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">COLLECTIONS</span>
+                <h3>Explore the shelves</h3>
+                <p>Find your next reference among the library’s books, including materials in the Filipiniana collection.</p>
+              </figcaption>
             </figure>
             <figure class="gallery-card">
-              <div class="gallery-image"><img src="assets/gallery/photo-2.png" alt="Library photo 2" loading="lazy" /></div>
-              <figcaption class="gallery-caption"><span>02</span> Library photo</figcaption>
+              <div class="gallery-image"><img src="assets/gallery/photo-2.png" alt="Books displayed beside a Learning Resource Center bulletin board" loading="lazy" width="1200" height="900" /></div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">ON DISPLAY</span>
+                <h3>Discover something new</h3>
+                <p>Take a closer look at featured books and library displays for ideas to explore on your next visit.</p>
+              </figcaption>
             </figure>
             <figure class="gallery-card">
-              <div class="gallery-image"><img src="assets/gallery/photo-3.png" alt="Library photo 3" loading="lazy" /></div>
-              <figcaption class="gallery-caption"><span>03</span> Library photo</figcaption>
+              <div class="gallery-image"><img src="assets/gallery/photo-3.png" alt="Placeholder for an upcoming library photo" loading="lazy" width="1200" height="900" /></div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">COMING SOON</span>
+                <h3>More spaces to explore</h3>
+                <p>More views of the Learning Resource Center are coming soon.</p>
+              </figcaption>
             </figure>
             <figure class="gallery-card">
-              <div class="gallery-image"><img src="assets/gallery/photo-4.png" alt="Library photo 4" loading="lazy" /></div>
-              <figcaption class="gallery-caption"><span>04</span> Library photo</figcaption>
+              <div class="gallery-image"><img src="assets/gallery/photo-4.png" alt="Placeholder for an upcoming library photo" loading="lazy" width="1200" height="900" /></div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">COMING SOON</span>
+                <h3>Another look inside</h3>
+                <p>Watch this space for another glimpse of life in the library.</p>
+              </figcaption>
             </figure>
           </div>
         </div>
@@ -287,26 +231,6 @@
           >
             <div class="staff-carousel-heading">
               <h3 id="library-team-title">Library Team</h3>
-              <div class="staff-carousel-controls">
-                <button
-                  type="button"
-                  data-carousel="team"
-                  data-direction="previous"
-                  aria-label="Previous staff"
-                  aria-controls="library-team-track"
-                >
-                  ←
-                </button>
-                <button
-                  type="button"
-                  data-carousel="team"
-                  data-direction="next"
-                  aria-label="Next staff"
-                  aria-controls="library-team-track"
-                >
-                  →
-                </button>
-              </div>
             </div>
             <div
               class="staff-track"
@@ -323,26 +247,6 @@
           >
             <div class="staff-carousel-heading">
               <h3 id="student-assistants-title">Student Assistants</h3>
-              <div class="staff-carousel-controls">
-                <button
-                  type="button"
-                  data-carousel="assistants"
-                  data-direction="previous"
-                  aria-label="Previous staff"
-                  aria-controls="student-assistants-track"
-                >
-                  ←
-                </button>
-                <button
-                  type="button"
-                  data-carousel="assistants"
-                  data-direction="next"
-                  aria-label="Next staff"
-                  aria-controls="student-assistants-track"
-                >
-                  →
-                </button>
-              </div>
             </div>
             <div
               class="staff-track"
@@ -361,13 +265,17 @@
           <h2 id="faq-title">Frequently asked questions<span class="period">.</span></h2>
 
           <div class="faq-grid">
+            <div class="faq-column">
             <details><summary>Who can use this portal?</summary><div class="faq-answer"><p>The portal is intended for Lipa City Colleges students, faculty, employees, and other authorized library users. Access requirements vary by platform: some use individual LCC identification, while others use institution-provided credentials.</p></div></details>
             <details><summary>Do I need an account?</summary><div class="faq-answer"><p>Access depends on the resource. LIBROS-OPAC uses your Student or Employee identification, while some subscribed platforms use institutional access information provided by the library.</p></div></details>
             <details><summary>Can I use these resources outside the campus?</summary><div class="faq-answer"><p>Remote access depends on the provider and its current settings. Review the access details shown in this portal before opening the resource.</p></div></details>
             <details><summary>Which resource should I use for research?</summary><div class="faq-answer"><p>GALE is a good starting point for journal articles and academic research. IG Publishing and TRITECH offer additional digital books and references.</p></div></details>
+            </div>
+            <div class="faq-column">
             <details><summary>Where can I check whether the library has a book?</summary><div class="faq-answer"><p>Use LIBROS-OPAC to search the Lipa City Colleges library catalog.</p></div></details>
             <details><summary>What should I do if a login does not work?</summary><div class="faq-answer"><p>Contact the Lipa City Colleges Learning Resource Center and tell them which platform you are trying to access.</p></div></details>
             <details><summary>Can I share the institutional credentials?</summary><div class="faq-answer"><p>Institutional access information is intended for authorized LCC users and should not be shared outside the institution.</p></div></details>
+            </div>
           </div>
         </div>
       </section>
@@ -384,7 +292,7 @@
             <div>
               <h3>Explore</h3>
               <a href="#home">Home</a><a href="#resources">Resources</a
-              ><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#staff">Staff</a>
+              ><a href="#about">About</a><a href="gallery.html">Gallery</a><a href="#staff">Staff</a>
             </div>
             <div>
               <h3>Resources</h3>
@@ -424,30 +332,17 @@
       aria-labelledby="dialog-title"
     >
       <div class="dialog-shell">
-        <button
-          class="dialog-close"
-          type="button"
-          aria-label="Close resource details"
-        >
-          ×
-        </button>
-        <div id="dialog-content"></div>
-      </div>
-    </dialog>
-    <dialog
-      class="staff-dialog"
-      id="staff-dialog"
-      aria-labelledby="staff-dialog-title"
-    >
-      <div class="staff-dialog-shell">
-        <button
-          type="button"
-          class="staff-dialog-close"
-          aria-label="Close staff profile"
-        >
-          ×
-        </button>
-        <div id="staff-dialog-content"></div>
+        <div class="dialog-top">
+          <div id="dialog-heading-slot"></div>
+          <button
+            class="dialog-close"
+            type="button"
+            aria-label="Close resource details"
+          >
+            ×
+          </button>
+        </div>
+        <div id="dialog-content" class="dialog-content"></div>
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
