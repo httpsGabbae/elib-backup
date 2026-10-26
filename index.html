@@ -9,20 +9,9 @@
       content="Explore library catalogs, research databases, digital publications, and e-books through the Lipa City Colleges eLibrary portal."
     />
     <title>LCC Library Gateway</title>
-    <link rel="icon" type="image/png" href="logos/lcc_logo.png" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/hero.css" />
-    <link rel="stylesheet" href="css/tour.css" />
-    <link rel="stylesheet" href="css/gallery.css" />
-    <link rel="stylesheet" href="css/staff.css?v=6" />
-    <link rel="stylesheet" href="css/appearance.css" />
-    <link rel="stylesheet" href="css/guidance.css" />
-    <link rel="stylesheet" href="css/revision.css" />
-    <script src="js/app.js" defer></script>
-    <script src="js/staff-data.js" defer></script>
-    <script src="js/staff.js?v=6" defer></script>
-    <script src="js/hero.js" defer></script>
-    <script src="js/nav.js" defer></script>
+    <link rel="icon" type="image/png" href="images/lcc_logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#resources">Skip to resources</a>
@@ -36,14 +25,13 @@
         >
           <img
             class="brand-logo"
-            src="logos/lcc_logo.png"
+            src="images/lcc_logo.png"
             alt=""
             width="44"
             height="44"
           />
           <span class="brand-copy"
-            ><strong>LIPA CITY COLLEGES</strong
-            ><small>GATEWAY</small></span
+            ><strong>LIPA CITY COLLEGES</strong><small>GATEWAY</small></span
           >
         </a>
         <button
@@ -62,55 +50,193 @@
         >
           <a href="#home" class="nav-link is-active">Home</a>
           <a href="#resources" class="nav-link">Resources</a>
-          
-          <a href="gallery.html" class="nav-link">Gallery</a>
+
+          <a href="#gallery-page" class="nav-link">Gallery</a>
           <a href="#staff" class="nav-link">Staff</a>
-        </nav></div></header>
-    <main>
+        </nav>
+      </div>
+    </header>
+    <main id="home-view">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-slider" aria-label="LCC library photo slideshow">
           <div class="hero-slider-track">
-            <div class="hero-slide"><img src="images/hero-1.png" alt="LCC library highlight 1" fetchpriority="high" /></div>
-            <div class="hero-slide"><img src="images/hero-2.png" alt="LCC library highlight 2" /></div>
-            <div class="hero-slide"><img src="images/hero-3.png" alt="LCC library highlight 3" /></div>
-            <div class="hero-slide" aria-hidden="true"><img src="images/hero-1.png" alt="" /></div>
+            <div class="hero-slide">
+              <img
+                src="images/library-filipiniana.jpg"
+                alt="Rows of books in the library Filipiniana collection"
+                fetchpriority="high"
+                width="2048"
+                height="1536"
+              />
+            </div>
+            <div class="hero-slide">
+              <img
+                src="images/library-book-display.jpg"
+                alt="Featured books displayed beside the Learning Resource Center bulletin board"
+                width="2048"
+                height="1536"
+              />
+            </div>
+            <div class="hero-slide">
+              <img
+                src="images/library-reading-area.jpg"
+                alt="Library reading area with study tables, chairs, and lounge seating"
+                width="2048"
+                height="1536"
+              />
+            </div>
+            <div class="hero-slide">
+              <img
+                src="images/library-internet-area.jpg"
+                alt="Entrance to the library internet section and laptop area with computer stations inside"
+                width="2048"
+                height="1536"
+              />
+            </div>
+            <div class="hero-slide" aria-hidden="true">
+              <img
+                src="images/library-filipiniana.jpg"
+                alt=""
+                width="2048"
+                height="1536"
+              />
+            </div>
           </div>
         </div>
-        <div class="container hero-inner"><div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-line"></span> MADE FOR YOUR NEXT BIG IDEA</div>
-          <h1 id="hero-title">Your next great idea<br /><em>starts here.</em></h1>
-          <p>Working on an assignment or exploring a new topic? Find books, trusted research sources, and digital collections in one place.</p>
-          <a class="button button-primary" href="#resources">Explore resources <span aria-hidden="true">↗</span></a>
-        </div></div>
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="eyebrow-line"></span> MADE FOR YOUR NEXT BIG IDEA
+            </div>
+            <h1 id="hero-title">
+              Your next great idea<br /><em>starts here.</em>
+            </h1>
+            <p>
+              Working on an assignment or exploring a new topic? Find books,
+              trusted research sources, and digital collections in one place.
+            </p>
+            <a class="button button-primary" href="#resources"
+              >Explore resources <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
       </section>
-      <section class="resources-section" id="resources" aria-labelledby="resources-title"><div class="container">
-        <div class="section-head"><div><div class="section-kicker">CURATED FOR YOUR JOURNEY</div>
-          <h2 id="resources-title">Explore library resources<span class="period">.</span></h2>
-          <p>Choose a platform to access the digital resources available to LCC students and employees.</p>
-        </div></div>
-        <div class="resource-grid" id="resource-grid"></div>
-        <p class="resource-note"><span aria-hidden="true">ⓘ</span> Select a platform to review its sign-in details before visiting.</p>
-        <div class="resource-help"><section class="resource-chooser" aria-labelledby="resource-chooser-title">
-          <div class="section-kicker">RESOURCE GUIDE</div><h3 id="resource-chooser-title">Not sure where to start?</h3><ul>
-            <li><a href="#resources" data-resource-link="libros"><span class="resource-need">Looking for a book in the LCC library?</span><span class="resource-use">LIBROS-OPAC <span aria-hidden="true">↗</span></span></a></li>
-            <li><a href="#resources" data-resource-link="gale"><span class="resource-need">Need journal articles or academic sources?</span><span class="resource-use">GALE <span aria-hidden="true">↗</span></span></a></li>
-                <li><a href="#resources" data-resource-link="ig"><span class="resource-need">Looking for digital academic books?</span><span class="resource-use">IG Publishing <span aria-hidden="true">↗</span></span></a></li>
-                <li><a href="#resources" data-resource-link="tritech"><span class="resource-need">Need additional eBooks and online reading?</span><span class="resource-use">TRITECH <span aria-hidden="true">↗</span></span></a></li>
+      <section
+        class="resources-section"
+        id="resources"
+        aria-labelledby="resources-title"
+      >
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">CURATED FOR YOUR JOURNEY</div>
+              <h2 id="resources-title">
+                Explore library resources<span class="period">.</span>
+              </h2>
+              <p>
+                Choose a platform to access the digital resources available to
+                LCC students and employees.
+              </p>
+            </div>
+          </div>
+          <div class="resource-grid" id="resource-grid"></div>
+          <p class="resource-note">
+            <span aria-hidden="true">ⓘ</span> Select a platform to review its
+            sign-in details before visiting.
+          </p>
+          <div class="resource-help">
+            <section
+              class="resource-chooser"
+              aria-labelledby="resource-chooser-title"
+            >
+              <div class="section-kicker">RESOURCE GUIDE</div>
+              <h3 id="resource-chooser-title">Not sure where to start?</h3>
+              <ul>
+                <li>
+                  <a href="#resources" data-resource-link="libros"
+                    ><span class="resource-need"
+                      >Looking for a book in the LCC library?</span
+                    ><span class="resource-use"
+                      >LIBROS-OPAC <span aria-hidden="true">↗</span></span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a href="#resources" data-resource-link="gale"
+                    ><span class="resource-need"
+                      >Need journal articles or academic sources?</span
+                    ><span class="resource-use"
+                      >GALE <span aria-hidden="true">↗</span></span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a href="#resources" data-resource-link="ig"
+                    ><span class="resource-need"
+                      >Looking for digital academic books?</span
+                    ><span class="resource-use"
+                      >IG Publishing <span aria-hidden="true">↗</span></span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a href="#resources" data-resource-link="tritech"
+                    ><span class="resource-need"
+                      >Need additional eBooks and online reading?</span
+                    ><span class="resource-use"
+                      >TRITECH <span aria-hidden="true">↗</span></span
+                    ></a
+                  >
+                </li>
               </ul>
             </section>
             <section class="portal-steps" aria-labelledby="portal-steps-title">
               <div class="section-kicker">GETTING STARTED</div>
               <h3 id="portal-steps-title">How the portal works</h3>
               <ol>
-                <li><span>01</span><div><strong>Choose a resource</strong><p>Select the platform that matches what you need.</p></div></li>
-                <li><span>02</span><div><strong>Review access details</strong><p>Check its sign-in information before continuing.</p></div></li>
-                <li><span>03</span><div><strong>Open the provider</strong><p>Visit the resource website and begin searching.</p></div></li>
+                <li>
+                  <span>01</span>
+                  <div>
+                    <strong>Choose a resource</strong>
+                    <p>Select the platform that matches what you need.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>02</span>
+                  <div>
+                    <strong>Review access details</strong>
+                    <p>Check its sign-in information before continuing.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>03</span>
+                  <div>
+                    <strong>Open the provider</strong>
+                    <p>Visit the resource website and begin searching.</p>
+                  </div>
+                </li>
               </ol>
             </section>
           </div>
           <div class="resource-small-notes">
-            <p><span class="resource-note-icon" aria-hidden="true">✦</span><span><strong>Research tip</strong> Use more than one source: start with GALE for academic articles, use IG Publishing or TRITECH for digital books, and check LIBROS-OPAC for library materials.</span></p>
-            <p><span class="resource-note-icon" aria-hidden="true">ⓘ</span><span><strong>Access reminder</strong> Institutional access information is for authorized LCC users. Please use library accounts responsibly and do not share credentials outside the institution.</span></p>
+            <p>
+              <span class="resource-note-icon" aria-hidden="true">✦</span
+              ><span
+                ><strong>Research tip</strong> Use more than one source: start
+                with GALE for academic articles, use IG Publishing or TRITECH
+                for digital books, and check LIBROS-OPAC for library
+                materials.</span
+              >
+            </p>
+            <p>
+              <span class="resource-note-icon" aria-hidden="true">ⓘ</span
+              ><span
+                ><strong>Access reminder</strong> Institutional access
+                information is for authorized LCC users. Please use library
+                accounts responsibly and do not share credentials outside the
+                institution.</span
+              >
+            </p>
           </div>
         </div>
       </section>
@@ -120,7 +246,10 @@
           <div class="tour-copy">
             <div class="section-kicker">VIRTUAL TOUR</div>
             <h2 id="tour-title">Take a look inside.</h2>
-            <p>Take a virtual walkthrough of the Lipa City Colleges Learning Resource Center and explore the spaces available to library users.</p>
+            <p>
+              Take a virtual walkthrough of the Lipa City Colleges Learning
+              Resource Center and explore the spaces available to library users.
+            </p>
             <span class="tour-duration">6-minute library tour</span>
           </div>
           <div class="tour-frame">
@@ -135,48 +264,108 @@
         </div>
       </section>
 
-      <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <section
+        class="gallery-section"
+        id="gallery"
+        aria-labelledby="gallery-title"
+      >
         <div class="container">
           <div class="gallery-heading">
             <div>
               <div class="section-kicker">INSIDE THE LIBRARY</div>
-              <h2 id="gallery-title">A glimpse of the LRC<span class="period">.</span></h2>
-              <p>Explore the collections, displays, and spaces of the LCC Learning Resource Center. Get to know the library before your next visit.</p>
+              <h2 id="gallery-title">
+                A glimpse of the LRC<span class="period">.</span>
+              </h2>
+              <p>
+                Find a spot to focus, follow an idea through the shelves, and
+                discover resources for your next assignment. Come in with a
+                question and let the library team help you find a place to
+                start.
+              </p>
             </div>
-            <a class="gallery-back" href="gallery.html">Explore the gallery <span aria-hidden="true">↗</span></a>
+            <a class="gallery-back" href="#gallery-page"
+              >Explore the gallery <span aria-hidden="true">↗</span></a
+            >
           </div>
           <div class="gallery-grid">
-            <!-- To add a photo, replace its PNG below and edit the title, description, and alt text. -->
+            <!-- Edit each photo, alt text, title, and description here. Library stills come from the shared Drive collection. -->
             <figure class="gallery-card">
-              <div class="gallery-image"><img src="assets/gallery/photo-1.png" alt="Shelves of books in the Filipiniana section of the LCC library" loading="lazy" width="1200" height="900" /></div>
+              <div class="gallery-image">
+                <img
+                  src="images/library-filipiniana.jpg"
+                  alt="Filipiniana bookshelves and labeled aisles in the LCC library"
+                  loading="lazy"
+                  width="2048"
+                  height="1536"
+                />
+              </div>
               <figcaption class="gallery-caption">
-                <span class="gallery-category">COLLECTIONS</span>
-                <h3>Explore the shelves</h3>
-                <p>Find your next reference among the library’s books, including materials in the Filipiniana collection.</p>
+                <span class="gallery-category">FILIPINIANA COLLECTION</span>
+                <h3>Discover a local perspective.</h3>
+                <p>
+                  The Filipiniana shelves bring Philippine reading materials
+                  together. Explore the collection for a local perspective on
+                  your next assignment.
+                </p>
               </figcaption>
             </figure>
             <figure class="gallery-card">
-              <div class="gallery-image"><img src="assets/gallery/photo-2.png" alt="Books displayed beside a Learning Resource Center bulletin board" loading="lazy" width="1200" height="900" /></div>
+              <div class="gallery-image">
+                <img
+                  src="images/library-book-display.jpg"
+                  alt="Books displayed on a table and wall shelves beside a library bulletin board"
+                  loading="lazy"
+                  width="2048"
+                  height="1536"
+                />
+              </div>
               <figcaption class="gallery-caption">
-                <span class="gallery-category">ON DISPLAY</span>
-                <h3>Discover something new</h3>
-                <p>Take a closer look at featured books and library displays for ideas to explore on your next visit.</p>
+                <span class="gallery-category">BOOK DISPLAY</span>
+                <h3>Find your next reading idea.</h3>
+                <p>
+                  Displayed books and the nearby bulletin board give you
+                  something new to browse. Stop by for a title that catches your
+                  interest.
+                </p>
               </figcaption>
             </figure>
             <figure class="gallery-card">
-              <div class="gallery-image"><img src="assets/gallery/photo-3.png" alt="Placeholder for an upcoming library photo" loading="lazy" width="1200" height="900" /></div>
+              <div class="gallery-image">
+                <img
+                  src="images/library-reading-area.jpg"
+                  alt="Library reading area with study tables, chairs, and lounge seating"
+                  loading="lazy"
+                  width="2048"
+                  height="1536"
+                />
+              </div>
               <figcaption class="gallery-caption">
-                <span class="gallery-category">COMING SOON</span>
-                <h3>More spaces to explore</h3>
-                <p>More views of the Learning Resource Center are coming soon.</p>
+                <span class="gallery-category">READING & STUDY</span>
+                <h3>Make room for focused study.</h3>
+                <p>
+                  Study tables and lounge seating offer places to read and
+                  review. Bring your notes and settle in between classes.
+                </p>
               </figcaption>
             </figure>
             <figure class="gallery-card">
-              <div class="gallery-image"><img src="assets/gallery/photo-4.png" alt="Placeholder for an upcoming library photo" loading="lazy" width="1200" height="900" /></div>
+              <div class="gallery-image">
+                <img
+                  src="images/library-internet-area.jpg"
+                  alt="Entrance labeled Internet Section and Laptop Area with computers visible inside"
+                  loading="lazy"
+                  width="2048"
+                  height="1536"
+                />
+              </div>
               <figcaption class="gallery-caption">
-                <span class="gallery-category">COMING SOON</span>
-                <h3>Another look inside</h3>
-                <p>Watch this space for another glimpse of life in the library.</p>
+                <span class="gallery-category">INTERNET & LAPTOP AREA</span>
+                <h3>Connect with more resources.</h3>
+                <p>
+                  This entrance leads to the internet section and laptop area.
+                  Ask the library team about using the facilities for your
+                  coursework.
+                </p>
               </figcaption>
             </figure>
           </div>
@@ -232,21 +421,300 @@
       <section class="faq-section" aria-labelledby="faq-title">
         <div class="container">
           <div class="section-kicker">HELP &amp; SUPPORT</div>
-          <h2 id="faq-title">Frequently asked questions<span class="period">.</span></h2>
+          <h2 id="faq-title">
+            Frequently asked questions<span class="period">.</span>
+          </h2>
 
           <div class="faq-grid">
             <div class="faq-column">
-            <details><summary>Who can use this portal?</summary><div class="faq-answer"><p>The portal is intended for Lipa City Colleges students, faculty, employees, and other authorized library users. Access requirements vary by platform: some use individual LCC identification, while others use institution-provided credentials.</p></div></details>
-            <details><summary>Do I need an account?</summary><div class="faq-answer"><p>Access depends on the resource. LIBROS-OPAC uses your Student or Employee identification, while some subscribed platforms use institutional access information provided by the library.</p></div></details>
-            <details><summary>Can I use these resources outside the campus?</summary><div class="faq-answer"><p>Remote access depends on the provider and its current settings. Review the access details shown in this portal before opening the resource.</p></div></details>
-            <details><summary>Which resource should I use for research?</summary><div class="faq-answer"><p>GALE is a good starting point for journal articles and academic research. IG Publishing and TRITECH offer additional digital books and references.</p></div></details>
+              <details>
+                <summary>Who can use this portal?</summary>
+                <div class="faq-answer">
+                  <p>
+                    The portal is intended for Lipa City Colleges students,
+                    faculty, employees, and other authorized library users.
+                    Access requirements vary by platform: some use individual
+                    LCC identification, while others use institution-provided
+                    credentials.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>Do I need an account?</summary>
+                <div class="faq-answer">
+                  <p>
+                    Access depends on the resource. LIBROS-OPAC uses your
+                    Student or Employee identification, while some subscribed
+                    platforms use institutional access information provided by
+                    the library.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>Can I use these resources outside the campus?</summary>
+                <div class="faq-answer">
+                  <p>
+                    Remote access depends on the provider and its current
+                    settings. Review the access details shown in this portal
+                    before opening the resource.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>Which resource should I use for research?</summary>
+                <div class="faq-answer">
+                  <p>
+                    GALE is a good starting point for journal articles and
+                    academic research. IG Publishing and TRITECH offer
+                    additional digital books and references.
+                  </p>
+                </div>
+              </details>
             </div>
             <div class="faq-column">
-            <details><summary>Where can I check whether the library has a book?</summary><div class="faq-answer"><p>Use LIBROS-OPAC to search the Lipa City Colleges library catalog.</p></div></details>
-            <details><summary>What should I do if a login does not work?</summary><div class="faq-answer"><p>Contact the Lipa City Colleges Learning Resource Center and tell them which platform you are trying to access.</p></div></details>
-            <details><summary>Can I share the institutional credentials?</summary><div class="faq-answer"><p>Institutional access information is intended for authorized LCC users and should not be shared outside the institution.</p></div></details>
+              <details>
+                <summary>
+                  Where can I check whether the library has a book?
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    Use LIBROS-OPAC to search the Lipa City Colleges library
+                    catalog.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>What should I do if a login does not work?</summary>
+                <div class="faq-answer">
+                  <p>
+                    Contact the Lipa City Colleges Learning Resource Center and
+                    tell them which platform you are trying to access.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>Can I share the institutional credentials?</summary>
+                <div class="faq-answer">
+                  <p>
+                    Institutional access information is intended for authorized
+                    LCC users and should not be shared outside the institution.
+                  </p>
+                </div>
+              </details>
             </div>
           </div>
+        </div>
+      </section>
+    </main>
+    <main id="gallery-view" hidden>
+      <section
+        class="gallery-section gallery-page"
+        id="gallery-page"
+        aria-labelledby="gallery-page-title"
+      >
+        <div class="container">
+          <div class="gallery-heading">
+            <div>
+              <div class="section-kicker">INSIDE THE LIBRARY</div>
+              <h1 id="gallery-page-title">
+                A closer look at the library<span class="period">.</span>
+              </h1>
+              <p>
+                Find a spot to focus, follow an idea through the shelves, and
+                discover resources for your next assignment. Come in with a
+                question and let the library team help you find a place to
+                start.
+              </p>
+            </div>
+            <a class="gallery-back" href="#home"
+              >Back to home <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="gallery-grid">
+            <!-- Keep one representative photo per library space; edit captions alongside each image. -->
+            <figure class="gallery-card">
+              <div class="gallery-image">
+                <img
+                  src="images/library-filipiniana.jpg"
+                  alt="Filipiniana bookshelves and labeled aisles in the LCC library"
+                  loading="lazy"
+                  width="2048"
+                  height="1536"
+                />
+              </div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">FILIPINIANA COLLECTION</span>
+                <h2>Discover a local perspective.</h2>
+                <p>
+                  The Filipiniana shelves bring Philippine reading materials
+                  together. Explore the collection for a local perspective on
+                  your next assignment.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <div class="gallery-image">
+                <img
+                  src="images/library-reading-area.jpg"
+                  alt="Library reading area with study tables, chairs, and lounge seating"
+                  loading="lazy"
+                  width="2048"
+                  height="1536"
+                />
+              </div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">READING & STUDY</span>
+                <h2>Make room for focused study.</h2>
+                <p>
+                  Study tables and lounge seating offer places to read and
+                  review. Bring your notes and settle in between classes.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <div class="gallery-image">
+                <img
+                  src="images/library-internet-area.jpg"
+                  alt="Entrance labeled Internet Section and Laptop Area with computers visible inside"
+                  loading="lazy"
+                  width="2048"
+                  height="1536"
+                />
+              </div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">INTERNET & LAPTOP AREA</span>
+                <h2>Connect with more resources.</h2>
+                <p>
+                  This entrance leads to the internet section and laptop area.
+                  Ask the library team about using the facilities for your
+                  coursework.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <div class="gallery-image">
+                <img
+                  src="images/library-book-display.jpg"
+                  alt="Books displayed on a table and wall shelves beside a library bulletin board"
+                  loading="lazy"
+                  width="2048"
+                  height="1536"
+                />
+              </div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">BOOK DISPLAY</span>
+                <h2>Find your next reading idea.</h2>
+                <p>
+                  Displayed books and the nearby bulletin board give you
+                  something new to browse. Stop by for a title that catches your
+                  interest.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <div class="gallery-image">
+                <img
+                  src="images/library-reference-corner.jpg"
+                  alt="World Book encyclopedias and other reference volumes beside a reading table"
+                  loading="lazy"
+                  width="1280"
+                  height="720"
+                />
+              </div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">REFERENCE CORNER</span>
+                <h2>Start with the background.</h2>
+                <p>
+                  Encyclopedias and reference volumes sit beside a reading
+                  table. Use them to build background knowledge before exploring
+                  a topic further.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <div class="gallery-image">
+                <img
+                  src="images/library-periodicals.jpg"
+                  alt="Periodicals rack with publications arranged under subject labels"
+                  loading="lazy"
+                  width="1280"
+                  height="720"
+                />
+              </div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">PERIODICALS SECTION</span>
+                <h2>Explore a different viewpoint.</h2>
+                <p>
+                  Publications are arranged under subject labels in the
+                  periodicals rack. Browse the available issues for readings
+                  connected to your course.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <div class="gallery-image">
+                <img
+                  src="images/library-subject-shelves.jpg"
+                  alt="Close view along shelves of books with spine labels"
+                  loading="lazy"
+                  width="1280"
+                  height="720"
+                />
+              </div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">BOOK COLLECTION</span>
+                <h2>Look beyond the first result.</h2>
+                <p>
+                  Rows of labeled books invite you to explore more of the
+                  collection. Ask a librarian to help you find titles related to
+                  your topic.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <div class="gallery-image">
+                <img
+                  src="images/library-starbooks-station.jpg"
+                  alt="STARBOOKS computer station beside Gale and Tritech information banners"
+                  loading="lazy"
+                  width="1536"
+                  height="2048"
+                />
+              </div>
+              <figcaption class="gallery-caption">
+                <span class="gallery-category">DIGITAL RESOURCE STATION</span>
+                <h2>Discover another way to learn.</h2>
+                <p>
+                  The STARBOOKS station stands beside information banners for
+                  digital resources. Ask the library team how to get started
+                  with these learning tools.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+          <aside class="gallery-visit" aria-labelledby="gallery-visit-title">
+            <div>
+              <div class="section-kicker">
+                MAKE YOUR NEXT STUDY STOP THE LIBRARY
+              </div>
+              <h2 id="gallery-visit-title">
+                Bring your notes. Bring your questions.
+              </h2>
+              <p>
+                Whether you need a reference, a reading space, or help getting
+                started, the Learning Resource Center is a place to explore.
+                Visit us at Lipa City Colleges, or contact the library team for
+                opening hours and access guidance.
+              </p>
+            </div>
+            <div class="gallery-visit-links">
+              <a class="gallery-back" href="#staff"
+                >Meet the library team <span aria-hidden="true">↗</span></a
+              ><a class="gallery-back" href="#resources"
+                >Explore library resources <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </aside>
         </div>
       </section>
     </main>
@@ -262,7 +730,7 @@
             <div>
               <h3>Explore</h3>
               <a href="#home">Home</a><a href="#resources">Resources</a
-              ><a href="gallery.html">Gallery</a><a href="#staff">Staff</a>
+              ><a href="#gallery-page">Gallery</a><a href="#staff">Staff</a>
             </div>
             <div>
               <h3>Resources</h3>
@@ -288,9 +756,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>
-            Developed by 2nd Year BS Computer Science Students
-          </p>
+          <p>Developed by 2nd Year BS Computer Science Students</p>
           <p>© <span id="year"></span> Lipa City Colleges eLibrary</p>
         </div>
       </div>
@@ -312,7 +778,12 @@
             ×
           </button>
         </div>
-        <div id="dialog-content" class="dialog-content" tabindex="0" aria-label="Resource information"></div>
+        <div
+          id="dialog-content"
+          class="dialog-content"
+          tabindex="0"
+          aria-label="Resource information"
+        ></div>
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
